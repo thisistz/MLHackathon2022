@@ -1,6 +1,8 @@
 # MLHackathon2022
 
-very cool
+This is a speech to image generation using Assembly AI and Lafite GAN. 
+
+The idea is to transcribe real-time voice input and generate images in real-time.
 
 
 https://github.com/drboog/Lafite
