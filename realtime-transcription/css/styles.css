@@ -1,5 +1,5 @@
 header {
-  background: #09032f;
+  background: #8c1e41;
   color: white;
   height: 20vh;
   display: flex;
@@ -30,7 +30,7 @@ header {
   border-radius: .5rem;
   justify-content: center;
   cursor: pointer;
-  background: #6b2bd6;
+  background: #8c1e41;
   color: white;
   width: 17%;
   font-size: 18px;
