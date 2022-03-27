@@ -11,6 +11,10 @@ import torch.nn.functional as F
 import torchvision.transforms as T
 from tqdm import tqdm
 import scipy
+from selenium import webdriver
+
+driver = webdriver.Chrome(executable_path='../selenium/chromedriver')
+driver.get('http://localhost:3000/')
 
 
 class Generator:
@@ -54,7 +58,7 @@ class Generator:
         clip_model, _ = clip.load("ViT-B/32", device=device)
         clip_model = clip_model.eval()
 
-        txt = "time machine"
+        txt = str(driver.find_element_by_xpath('//*[@id="message"]').text)
         tokenized_text = clip.tokenize([txt]).to(device)
         txt_fts = clip_model.encode_text(tokenized_text)
         txt_fts = txt_fts / txt_fts.norm(dim=-1, keepdim=True)
