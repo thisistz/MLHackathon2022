@@ -6,7 +6,7 @@ The idea is to transcribe voice input and generate images in real-time.
 
 ## Install and Build the Environment
 
-starting from the top level directory
+#### starting from the top level directory of `/MLHackathon2022/`
 
 1. `python -m venv venv`
 2. `source venv/bin/activate`
@@ -15,12 +15,9 @@ starting from the top level directory
 5. `npm install`
 6. open a separate terminal and run `npm run server`
 7. open a separate terminal and run `npm run client`
-8. `cd ..` return to the top level directory
-9. install selenium driver according to operating system https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers/
-   - `Lafite/model.py` expects the chrome driver `executable_path='../selenium/chromedriver'` in the `/selenium/` directory
-11. `cd Lafite`
-13. `sudo wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1tMD6MWydRDMaaM7iTOKsUK-Wv2YNDRRt' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1tMD6MWydRDMaaM7iTOKsUK-Wv2YNDRRt" -O "COCO2014_CLIP_ViTB32_all_text.pkl" && rm -rf /tmp/cookies.txt`
-14. open a separate terminal and run `python model.py`
+8. `cd ../Lafite` switch to the **Lafite** directory
+9. `sudo wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1tMD6MWydRDMaaM7iTOKsUK-Wv2YNDRRt' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1tMD6MWydRDMaaM7iTOKsUK-Wv2YNDRRt" -O "COCO2014_CLIP_ViTB32_all_text.pkl" && rm -rf /tmp/cookies.txt`
+10. open a separate terminal and run `python model.py`
 
 ## References and Resources
 
