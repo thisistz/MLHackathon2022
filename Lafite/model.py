@@ -4,6 +4,7 @@ from PIL import Image as PIL_Image
 import dnnlib, legacy
 import clip
 import time
+import random
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
@@ -11,7 +12,7 @@ from selenium.webdriver.common.by import By
 
 s = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=s)
-driver.maximize_window()
+# driver.maximize_window()
 driver.get('http://localhost:3000/')
 
 
@@ -49,6 +50,7 @@ class Generator:
 
 
 change = ''
+files = []
 
 while True:
     with torch.no_grad():
@@ -57,20 +59,22 @@ while True:
         generator = Generator(device=device, path=path)
         clip_model, _ = clip.load("ViT-B/32", device=device)
         clip_model = clip_model.eval()
-
-        txt = str(driver.find_element(By.XPATH, '//*[@id="message"]').text)
-
-        if txt != change:
+        txt = str(driver.find_element(By.XPATH, '//*[@id="message"]').text).split('.')[-1]
+        if txt != change and txt != '':
             print(txt)
             tokenized_text = clip.tokenize([txt]).to(device)
             txt_fts = clip_model.encode_text(tokenized_text)
             txt_fts = txt_fts / txt_fts.norm(dim=-1, keepdim=True)
-
             z = torch.randn((1, 512)).to(device)
             c = torch.randn((1, 1)).to(device)
             img, _ = generator.generate(z=z, c=c, fts=txt_fts)
             to_show_img = generator.tensor_to_img(img)
-            to_show_img.save('generated.jpg')
-            time.sleep(1)
-
+            filename = f"generated_{random.randrange(99999)}.jpg"
+            save_path = f"../realtime-transcription/" + filename
+            files.append(filename)
+            to_show_img.save(save_path)
+            driver.execute_script(
+                f"document.getElementsByClassName('model_image')[0].src = 'http://localhost:3000/{filename}'"
+            )
+            time.sleep(0.5)
         change = txt
