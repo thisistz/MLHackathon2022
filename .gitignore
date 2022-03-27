@@ -3,3 +3,9 @@
 /**/node_modules/
 /.ipynb_checkpoints/
 /**/.ipynb_checkpoints/
+*.pkl
+/**/*.pkl
+/venv/
+/**/venv/
+chromedriver
+/**/chromedriver
