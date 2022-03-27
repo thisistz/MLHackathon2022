@@ -32,23 +32,32 @@ header {
   cursor: pointer;
   background: #6b2bd6;
   color: white;
-  width: 5%;
+  width: 17%;
   font-size: 18px;
 }
 
 .real-time-interface__title {
   margin-bottom: .5em;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 525;
 }
 
 .real-time-interface__message {
   text-align: left;
-  width: 95%;
+  width: 90%;
   margin-top: .5em;
-  font-size: 19px;
+  font-size: 22px;
   font-weight: 400;
   box-shadow: 0 0 32px 0 rgb(0 0 0 / 16%);
   padding: 1em;
   transition: .5s ease-in;
+}
+
+.model_image {
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1em;
+  width: 42%;
+  height: auto;
 }
