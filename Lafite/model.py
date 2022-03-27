@@ -1,19 +1,14 @@
-import time
-
 import torch
 import numpy as np
-import pickle
-import os
 from PIL import Image as PIL_Image
-from pathlib import Path
-from tqdm import tqdm
 import dnnlib, legacy
 import clip
-import torch.nn.functional as F
-import torchvision.transforms as T
-from tqdm import tqdm
-import scipy
 import time
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Chrome(executable_path='../selenium/chromedriver')
+driver.get('http://localhost:3000/')
 
 
 class Generator:
@@ -31,7 +26,6 @@ class Generator:
             network = legacy.load_network_pkl(f)
             self.G_ema = network['G_ema'].to(device)
             self.D = network['D'].to(device)
-            #                 self.G = network['G'].to(device)
             if device == 'cpu':
                 self.G_ema = self.G_ema.float()
             return self.G_ema
@@ -49,6 +43,7 @@ class Generator:
         img_list = [img for img in img_list]
         return PIL_Image.fromarray(torch.cat(img_list, dim=-2).detach().cpu().numpy().astype(np.uint8))
 
+
 change = ''
 
 while True:
@@ -59,10 +54,10 @@ while True:
         clip_model, _ = clip.load("ViT-B/32", device=device)
         clip_model = clip_model.eval()
 
-        f = open("message.txt", "r")
-        txt = f.read()
+        txt = str(driver.find_element(By.XPATH, '//*[@id="message"]').text)
+
         if txt != change:
-            print(f.read())
+            print(txt)
             tokenized_text = clip.tokenize([txt]).to(device)
             txt_fts = clip_model.encode_text(tokenized_text)
             txt_fts = txt_fts / txt_fts.norm(dim=-1, keepdim=True)
@@ -71,7 +66,7 @@ while True:
             c = torch.randn((1, 1)).to(device)
             img, _ = generator.generate(z=z, c=c, fts=txt_fts)
             to_show_img = generator.tensor_to_img(img)
-            to_show_img.save('./generated.jpg')
+            to_show_img.save('generated.jpg')
             time.sleep(1)
 
         change = txt
