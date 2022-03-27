@@ -1,2 +1,5 @@
 selenium
 clip-by-openai
+requests
+click
+webdriver-manager

@@ -9,3 +9,7 @@
 /**/venv/
 chromedriver
 /**/chromedriver
+package-lock.json
+/**/package-lock.json
+/**/*jpg
+*.jpg

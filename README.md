@@ -4,7 +4,7 @@ This is a speech to image generation using Assembly AI and Lafite GAN.
 
 The idea is to transcribe voice input and generate images in real-time.
 
-### Install and Build the Environment
+## Install and Build the Environment
 
 starting from the top level directory
 
@@ -22,9 +22,7 @@ starting from the top level directory
 13. `sudo wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1tMD6MWydRDMaaM7iTOKsUK-Wv2YNDRRt' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1tMD6MWydRDMaaM7iTOKsUK-Wv2YNDRRt" -O "COCO2014_CLIP_ViTB32_all_text.pkl" && rm -rf /tmp/cookies.txt`
 14. open a separate terminal and run `python model.py`
 
-
-
-
+## References and Resources
 
 https://github.com/drboog/Lafite
 
