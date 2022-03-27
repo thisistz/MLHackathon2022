@@ -3,9 +3,9 @@
 
 This project was inspired by a paper called [Zero-Shot Text-to-Image Generation](https://arxiv.org/abs/2102.12092), by Open AI, that introduces an autoregressive language model called [DALL·E](https://openai.com/blog/dall-e/) trained on images broken into segments that are given natural language descriptions. 
 
-Using the Assembly AI audio transcription API we are able to reproduce elements of the zero-shot capabilities presented in the DALL·E paper, in real-time, using a much less complex model that is trained on a summarized version of the training data they refer to as a meta-dataset in the paper [Less is More: Summary of Long Instructions is Better for Program Synthesis](https://arxiv.org/abs/2203.08597).
+Using the Assembly AI audio transcription API we are able to reproduce elements of the zero-shot capabilities presented in the DALL·E paper, in real-time, using a much less complex model that is trained on a summarized version of the training data they refer to as a meta-data set in the paper [Less is More: Summary of Long Instructions is Better for Program Synthesis](https://arxiv.org/abs/2203.08597).
 
-This is only possible with the combination of robust features present in the Assembly AI API that allow for a seamless integration with the machine learning model and web interface framework.
+This is only possible with the combination of robust features present in the Assembly AI API that allow for seamless integration with the machine learning model and web interface framework as well as the corrective language modeling they use to repair malformed input and isolate sentences as they are spoken.
 
 ## Install and Build the Environment
 
