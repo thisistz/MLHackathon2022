@@ -31,8 +31,8 @@ This is only possible with the combination of robust features present in the Ass
 
 ### Zero-Shot Text-to-Image Generation
 - https://github.com/lucidrains/DALLE-pytorch
-  - This OpenAI paper analyzes zero-, one-, and few-shot performance on Natural Language Processing tasks using autoregressive language modeling.
 
+This OpenAI paper analyzes zero-, one-, and few-shot performance on Natural Language Processing tasks using autoregressive language modeling.
 
     @article{DBLP:journals/corr/abs-2102-12092,
       author    = {Aditya Ramesh and
@@ -57,8 +57,8 @@ This is only possible with the combination of robust features present in the Ass
 
 ### LAFITE: Towards Language-Free Training for Text-to-Image Generation
 - https://github.com/drboog/Lafite
-  - The model proposed in this paper is able to produce similar performance on zero-shot benchmarks with 1% of the model size and training data used by the DALL·E model.
 
+The model proposed in this paper is able to produce similar performance on zero-shot benchmarks with 1% of the model size and training data used by the DALL·E model.
 
     @article{DBLP:journals/corr/abs-2111-13792,
       author    = {Yufan Zhou and
@@ -84,8 +84,8 @@ This is only possible with the combination of robust features present in the Ass
 
 ### Training Generative Adversarial Networks with Limited Data
 - https://github.com/NVlabs/stylegan2-ada-pytorch
-   - This paper presents a more efficient pretraining paradigm that uses a summarized version of training data to reduce superfluous relationships in the data.
 
+This paper presents a more efficient pretraining paradigm that uses a summarized version of training data to reduce superfluous relationships in the data.
 
     @article{DBLP:journals/corr/abs-2006-06676,
       author    = {Tero Karras and
@@ -109,8 +109,8 @@ This is only possible with the combination of robust features present in the Ass
 
 ### Learning Transferable Visual Models From Natural Language Supervision
 - https://github.com/openai/CLIP
-   - CLIP is an OpenAI model that is able to produce an evaluation metric for good vs bad images necessary for the GANs to properly evaluate images used in the generation aspects of the other papers.
 
+CLIP is an OpenAI model that is able to produce an evaluation metric for good vs bad images necessary for the GANs to properly evaluate images used in the generation aspects of the other papers.
 
     @article{DBLP:journals/corr/abs-2103-00020,
       author    = {Alec Radford and
