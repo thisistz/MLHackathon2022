@@ -9,6 +9,10 @@ This is only possible with the combination of robust features present in the Ass
 
 ## Install and Build the Environment
 
+#### You need Node.js
+
+- https://nodejs.org/en/download/package-manager/
+
 #### starting from the top level directory of `/MLHackathon2022/`
 
 1. `python -m venv venv`
